@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="import" href="app/meta.html">
+  <title>Polymer World Builder</title>
+  <link rel="manifest" href="app/manifest.json">
+  <link rel="icon" sizes="192x192" href="app/images/touch/chrome-touch-icon-192x192.png">
+  <link rel="apple-touch-icon" href="app/images/touch/apple-touch-icon.png">
+  <link rel="stylesheet" href="app/styles/main.css">
+  <script src="app/components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="app/elements/elements.html">
+  <style is="custom-style" include="shared-styles">
+    iron-pages {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body unresolved class="fullbleed layout vertical">
+  <span id="browser-sync-binding"></span>
+  <template is="dom-bind" id="app">
+    <paper-drawer-panel id="paperDrawerPanel">
+      <paper-scroll-header-panel drawer fixed>
+        <paper-toolbar id="drawerToolbar">
+          <span class="paper-font-title">Menu</span>
+        </paper-toolbar>
+        <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
+          <a data-route="cache-talen" href="/cache-talen" on-click="onDataRouteClick">
+            <iron-icon icon="info"></iron-icon>
+            <span>Talen</span>
+          </a>
+        </paper-menu>
+        <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
+          <a data-route="cache-gewesten" href="/cache-gewesten" on-click="onDataRouteClick">
+            <iron-icon icon="info"></iron-icon>
+            <span>Gewesten</span>
+          </a>
+        </paper-menu>
+        <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
+          <a id="cache-gemeenten" data-route="cache-gemeenten" href="/cache-gemeenten" on-click="onDataRouteClick">
+            <iron-icon icon="info"></iron-icon>
+            <span>Gemeenten</span>
+          </a>
+        </paper-menu>
+        <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
+          <a id="cache-straten" data-route="cache-straten" href="/cache-straten" on-click="onDataRouteClick">
+            <iron-icon icon="info"></iron-icon>
+            <span>Straten</span>
+          </a>
+        </paper-menu>
+        <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
+          <a id="cache-huisnummers" data-route="cache-huisnummers" href="/cache-huisnummers" on-click="onDataRouteClick">
+            <iron-icon icon="info"></iron-icon>
+            <span>Huisnummers</span>
+          </a>
+        </paper-menu>
+      </paper-scroll-header-panel>
+      <paper-scroll-header-panel main fixed>
+        <paper-toolbar id="mainToolbar" class="small">
+          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+          <div class="title">
+            <div class="app-name" id="header">Polymer</div>
+          </div>
+          <span class="flex"></span>
+          <paper-icon-button icon="refresh"></paper-icon-button>
+          <paper-icon-button icon="search"></paper-icon-button>
+        </paper-toolbar>
+        <div class="content">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+            <section data-route="cache-talen">
+              <cache-talen></cache-talen>
+            </section>
+            <section data-route="cache-taal">
+              <paper-material elevation="1">
+                <cache-taal firebase-id="{{params.firebaseId}}"></cache-taal>
+              </paper-material>
+            </section>
+            <section data-route="cache-gewesten">
+              <cache-gewesten></cache-gewesten>
+            </section>
+            <section data-route="cache-gewest">
+              <paper-material elevation="1">
+                <add-gemeenten></add-gemeenten>
+                <cache-gewest firebase-id="{{params.firebaseId}}"></cache-gewest>
+              </paper-material>
+            </section>
+            <section data-route="cache-gemeenten">
+              <cache-gemeenten></cache-gemeenten>
+            </section>
+            <section data-route="cache-gemeente">
+              <paper-material elevation="1">
+                <add-straten gemeente-id="{{params.firebaseId}}"></add-straten>
+                <cache-gemeente firebase-id="{{params.firebaseId}}"></cache-gemeente>
+              </paper-material>
+            </section>
+            <section data-route="cache-straten">
+              <cache-straten></cache-straten>
+            </section>
+            <section data-route="cache-straat">
+              <paper-material elevation="1">
+                <add-huisnummers></add-huisnummers>
+                <cache-straat firebase-id="{{params.firebaseId}}"></cache-straat>
+              </paper-material>
+            </section>
+          </iron-pages>
+        </div>
+      </paper-scroll-header-panel>
+    </paper-drawer-panel>
+  </template>
+  <script src="app/scripts/app.js"></script>
+</body>
+</html>
