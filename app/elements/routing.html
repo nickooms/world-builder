@@ -25,31 +25,27 @@
       app.route = 'cache-straat';
       app.$.header.textContent = 'Straat';
     });
-    var router = path => {
-      app.route = `cache-${path}`;
-      app.$.header.textContent = path.substr(0, 1).toUpperCase() + path.substr(1)
-    }
-    page('/', scrollToTop, () => {
+    page('/', scrollToTop, function() {
       app.route = 'cache-talen';
       app.$.header.textContent = 'Talen';
     });
-    page('/cache-talen', scrollToTop, () => {
+    page('/cache-talen', scrollToTop, function() {
       app.route = 'cache-talen';
       app.$.header.textContent = 'Talen';
     });
-    page('/cache-gewesten', scrollToTop, () => {
+    page('/cache-gewesten', scrollToTop, function() {
       app.route = 'cache-gewesten';
       app.$.header.textContent = 'Gewesten';
     });
-    page('/cache-gemeenten', scrollToTop, () => {
+    page('/cache-gemeenten', scrollToTop, function() {
       app.route = 'cache-gemeenten';
       app.$.header.textContent = 'Gemeenten';
     });
-    page('/cache-straten', scrollToTop, () => {
+    page('/cache-straten', scrollToTop, function() {
       app.route = 'cache-straten';
       app.$.header.textContent = 'Straten';
     });
-    page('/cache-huisnummers', scrollToTop, () => {
+    page('/cache-huisnummers', scrollToTop, function() {
       app.route = 'cache-huisnummers';
       app.$.header.textContent = 'Huisnummers';
     });

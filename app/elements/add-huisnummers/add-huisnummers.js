@@ -1,5 +1,5 @@
 (function() {
-  'use strict'
+  'use strict';
 
   Polymer({
     is: 'add-huisnummers',
@@ -56,5 +56,4 @@
       }.bind(this));
     }
   });
-
-})()
+})();

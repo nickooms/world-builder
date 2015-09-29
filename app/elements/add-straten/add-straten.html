@@ -1,5 +1,5 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<polymer-element name="add-straten" attributes="proxy-url add-object-type">
+<polymer-element name="add-straten" attributes="gemeente-id proxy-url add-object-type">
   <dom-module id="add-straten">
     <template>
     	<style is="custom-style">
@@ -65,21 +65,5 @@
       </paper-button>
     </template>
     <script src="add-straten.js"></script>
-    <script>
-	    function clickHandler(e) {
-	      var button = e.target;
-	      while (!button.hasAttribute('data-dialog') && button !== document.body) {
-	        button = button.parentElement;
-	      }
-	      if (!button.hasAttribute('data-dialog')) {
-	        return;
-	      }
-	      var id = button.getAttribute('data-dialog');
-	      var dialog = document.getElementById(id);
-	      if (dialog) {
-	        dialog.open();
-	      }
-	    }
-	  </script>
   </dom-module>
 </polymer-element>

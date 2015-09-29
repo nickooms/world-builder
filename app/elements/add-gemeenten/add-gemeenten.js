@@ -1,5 +1,5 @@
 (function() {
-  'use strict'
+  'use strict';
 
   Polymer({
     is: 'add-gemeenten',
@@ -28,7 +28,7 @@
       return this['db-url'] + '/' + this['add-object-url'];
     },
     ready: function() {
-      return this.$.btn.onclick = this.request.bind(this);
+      this.$.btn.onclick = this.request.bind(this);
     },
     request: function() {
       this.$.animated.open();
@@ -55,7 +55,5 @@
         this.$.animated.close();
       }.bind(this));
     }
-
   });
-
-})() 
+})();

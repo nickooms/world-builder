@@ -27,22 +27,18 @@
 		      width: 100%;
 		      margin: 20px 0;
 		    }
-
 		    paper-progress.blue {
 		      --paper-progress-active-color: var(--paper-light-blue-500);
 		      --paper-progress-secondary-color: var(--paper-light-blue-100);
 		    }
-
 		    paper-progress.red {
 		      --paper-progress-active-color: var(--paper-red-500);
 		      --paper-progress-secondary-color: var(--paper-red-100);
 		    }
-
 		    paper-progress.orange {
 		      --paper-progress-active-color: var(--paper-orange-500);
 		      --paper-progress-secondary-color: var(--paper-orange-100);
 		    }
-
 		    paper-progress.green {
 		      --paper-progress-active-color: var(--paper-light-green-500);
 		      --paper-progress-secondary-color: var(--paper-light-green-100);
@@ -64,21 +60,5 @@
       </paper-button>
     </template>
     <script src="add-gemeenten.js"></script>
-    <script>
-	    function clickHandler(e) {
-	      var button = e.target;
-	      while (!button.hasAttribute('data-dialog') && button !== document.body) {
-	        button = button.parentElement;
-	      }
-	      if (!button.hasAttribute('data-dialog')) {
-	        return;
-	      }
-	      var id = button.getAttribute('data-dialog');
-	      var dialog = document.getElementById(id);
-	      if (dialog) {
-	        dialog.open();
-	      }
-	    }
-	  </script>
   </dom-module>
 </polymer-element>
