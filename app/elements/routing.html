@@ -5,6 +5,10 @@
       app.scrollPageToTop();
       next();
     }
+    page('/', scrollToTop, function() {
+      app.route = 'cache-talen';
+      app.$.header.textContent = 'Talen';
+    });
     page('/cache-taal/:firebaseId', scrollToTop, data => {
       app.params = data.params;
       app.route = 'cache-taal';
@@ -24,10 +28,6 @@
       app.params = data.params;
       app.route = 'cache-straat';
       app.$.header.textContent = 'Straat';
-    });
-    page('/', scrollToTop, function() {
-      app.route = 'cache-talen';
-      app.$.header.textContent = 'Talen';
     });
     page('/cache-talen', scrollToTop, function() {
       app.route = 'cache-talen';
