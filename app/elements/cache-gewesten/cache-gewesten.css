@@ -1,0 +1,86 @@
+:host {
+  display: block;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 3px;
+  border: 1px solid #e5e5e5;
+}
+table thead th {
+  padding: 0 24px;
+  line-height: 56px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.54);
+}
+table td,
+table th {
+  padding: 12px 24px;
+}
+table th {
+  @apply(--paper-font-body1);
+  color: var(--secondary-text-color);
+  text-align: left;
+  border-bottom: 1px solid;
+  border-bottom-color: #e5e5e5;
+}
+table tbody tr {
+  cursor: pointer;
+  overflow: hidden;
+  height: 48px;
+}
+table tbody tr:first-child {
+  margin-top: 8px;
+}
+table element-action-menu::shadow iron-icon {
+  color: #e0e0e0;
+  margin: 0 4px;
+  width: 18px;
+  height: 18px;
+}
+table tr:hover element-action-menu::shadow iron-icon,
+table :focus element-action-menu::shadow iron-icon,
+table element-action-menu::shadow a:focus iron-icon {
+  color: #616161;
+}
+table .Naam {
+  overflow: hidden;
+  color: #606060;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+table tbody tr:hover {
+  background: #eeeeee;
+}
+table a {
+  font-weight: bold;
+}
+table a, 
+#element-tableiron-icon {
+  cursor: pointer;
+}
+[size=xs] table.Naam {
+  display: none;
+}
+table td.Id {
+  font-weight: 400;
+  font-size: 13px;
+  text-align: right;
+}
+table td.Naam {
+  white-space: nowrap;
+  color: var(--secondary-text-color);
+  line-height: 24px;
+}
+table td.TaalCode {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 400;
+}
+table th {
+  text-align: center;
+  cursor: pointer;
+}

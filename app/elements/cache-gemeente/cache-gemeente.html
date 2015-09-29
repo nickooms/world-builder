@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="cache-gemeente">
+  <template>
+    <link rel="stylesheet" href="cache-gemeente.css">
+    <firebase-document location="{{firebaseUrl}}" data="{{gemeente}}"></firebase-document>
+    <paper-input-container always-float-label>
+      <label>GemeenteId</label>
+      <input value="{{gemeente.GemeenteId}}" readonly></input>
+    </paper-input-container>
+    <paper-input-container always-float-label>
+      <label>GemeenteNaam</label>
+      <input value="{{gemeente.GemeenteNaam}}" readonly></input>
+    </paper-input-container>
+    <paper-input-container always-float-label>
+      <label>NISGemeenteCode</label>
+      <input value="{{gemeente.NISGemeenteCode}}" readonly></input>
+    </paper-input-container>
+    <paper-input-container always-float-label>
+      <label>TaalCode</label>
+      <input value="{{gemeente.TaalCode}}" readonly></input>
+    </paper-input-container>
+    <paper-input-container always-float-label>
+      <label>TaalCodeGemeenteNaam</label>
+      <input value="{{gemeente.TaalCodeGemeenteNaam}}" readonly></input>
+    </paper-input-container>
+    <paper-input-container always-float-label>
+      <label>TaalCodeTweedeTaal</label>
+      <input value="{{gemeente.TaalCodeTweedeTaal}}" readonly></input>
+    </paper-input-container>
+  </template>
+  <script src="cache-gemeente.js"></script>
+</dom-module>

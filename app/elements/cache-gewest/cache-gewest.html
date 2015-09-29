@@ -1,0 +1,20 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="cache-gewest">
+  <template>
+    <link rel="stylesheet" href="cache-gewest.css">
+    <firebase-document location="{{firebaseUrl}}" data="{{gewest}}"></firebase-document>
+    <paper-input-container always-float-label>
+      <label>GewestId</label>
+      <input value="{{gewest.GewestId}}" readonly></input>
+    </paper-input-container>
+    <paper-input-container always-float-label>
+      <label>GewestNaam</label>
+      <input value="{{gewest.GewestNaam}}" readonly></input>
+    </paper-input-container>
+    <paper-input-container always-float-label>
+      <label>TaalCodeGewestNaam</label>
+      <input value="{{gewest.TaalCodeGewestNaam}}" readonly></input>
+    </paper-input-container>
+  </template>
+  <script src="cache-gewest.js"></script>
+</dom-module>

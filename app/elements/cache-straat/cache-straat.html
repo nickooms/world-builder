@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="cache-straat">
+  <template>
+    <link rel="stylesheet" href="cache-straat.css">
+    <firebase-document location="{{firebaseUrl}}" data="{{straat}}"></firebase-document>
+    <paper-input-container always-float-label>
+      <label>StraatnaamId</label>
+      <input value="{{straat.StraatnaamId}}" readonly></input>
+    </paper-input-container>
+    <paper-input-container always-float-label>
+      <label>Straatnaam</label>
+      <input value="{{straat.Straatnaam}}" readonly></input>
+    </paper-input-container>
+    <paper-input-container always-float-label>
+      <label>StraatnaamLabel</label>
+      <input value="{{straat.StraatnaamLabel}}" readonly></input>
+    </paper-input-container>
+    <paper-input-container always-float-label>
+      <label>TaalCode</label>
+      <input value="{{straat.TaalCode}}" readonly></input>
+    </paper-input-container>
+    <paper-input-container always-float-label>
+      <label>TaalCodeStraatnaam</label>
+      <input value="{{straat.TaalCodeStraatnaam}}" readonly></input>
+    </paper-input-container>
+    <paper-input-container always-float-label>
+      <label>TaalCodeTweedeTaal</label>
+      <input value="{{straat.TaalCodeTweedeTaal}}" readonly></input>
+    </paper-input-container>
+  </template>
+  <script src="cache-straat.js"></script>
+</dom-module>

@@ -1,0 +1,20 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="cache-taal">
+  <template>
+    <link rel="stylesheet" href="cache-taal.css">
+    <firebase-document location="{{firebaseUrl}}" data="{{taal}}"></firebase-document>
+    <paper-input-container always-float-label>
+      <label>Code</label>
+      <input value="{{taal.Code}}" readonly></input>
+    </paper-input-container>
+    <paper-input-container always-float-label>
+      <label>Naam</label>
+      <input value="{{taal.Naam}}" readonly></input>
+    </paper-input-container>
+    <paper-input-container always-float-label>
+      <label>Definitie</label>
+      <input value="{{taal.Definitie}}" readonly></input>
+    </paper-input-container>
+  </template>
+  <script src="cache-taal.js"></script>
+</dom-module>

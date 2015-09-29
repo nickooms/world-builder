@@ -1,0 +1,26 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="cache-huisnummers">
+  <template>
+    <link rel="stylesheet" href="cache-huisnummers.css">
+    <firebase-collection location="https://fiery-inferno-8058.firebaseio.com/huisnummers" data="{{huisnummers}}"></firebase-collection>
+    <firebase-collection location="https://fiery-inferno-8058.firebaseio.com/talenFilter" data="{{talenFilter}}"></firebase-collection>
+    <table id="cache-gemeenten" flex>
+      <thead>
+        <tr>
+          <th class="HuisnummersId">HuisnummersId</th>
+          <th class="Huisnummers">Huisnummers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <a href="#" id="huisnummer"></a>
+        <template is="dom-repeat" items="[[huisnummer]]" as="item">
+          <tr on-tap="nav" target$="[[item.__firebaseKey__]]" tabindex="0">
+            <td class="HuisnummersId" width="10">[[item.HuisnummerId]]</td>
+            <td class="Huisnummers relative">[[item.Huisnummer]]</td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+  </template>
+  <script src="cache-huisnummers.js"></script>
+</dom-module>

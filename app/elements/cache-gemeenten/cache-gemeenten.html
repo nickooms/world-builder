@@ -1,0 +1,58 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="cache-gemeenten">
+  <template>
+    <link rel="stylesheet" href="cache-gemeenten.css">
+    <firebase-collection location="https://fiery-inferno-8058.firebaseio.com/gemeenten" data="{{gemeenten}}"></firebase-collection>
+    <firebase-collection location="https://fiery-inferno-8058.firebaseio.com/talenFilter" data="{{talenFilter}}"></firebase-collection>
+    <table id="cache-gemeenten" flex>
+      <thead>
+        <tr>
+          <th class="GemeenteId">GemeenteId</th>
+          <th class="GemeenteNaam">GemeenteNaam</th>
+          <th class="NISGemeenteCode">NISGemeenteCode</th>
+          <th class="TaalCode" valign="top" style="padding:0px; margin: 0px; height: 56dp;">
+            <paper-dropdown-menu label="TaalCode" style="height: 30dp; margin-bottom: 20px;">
+              <paper-menu class="dropdown-content">
+                <template is="dom-repeat" items="[[talenFilter]]" as="taal">
+                  <paper-item>[[taal.Naam]]</paper-item>
+                </template>
+              </paper-menu>
+            </paper-dropdown-menu>
+          </th>
+          <th class="TaalCodeGemeenteNaam">
+            <paper-dropdown-menu label="TaalCodeGemeenteNaam" style="height: 30dp; margin-bottom: 20px;">
+              <paper-menu class="dropdown-content">
+                <template is="dom-repeat" items="[[talenFilter]]" as="taal">
+                  <paper-item>[[taal.Naam]]</paper-item>
+                </template>
+              </paper-menu>
+            </paper-dropdown-menu>
+          </th>
+          <th class="TaalCodeTweedeTaal">
+            <paper-dropdown-menu label="TaalCodeTweedeTaal" style="height: 30dp; margin-bottom: 20px;">
+              <paper-menu class="dropdown-content">
+                <template is="dom-repeat" items="[[talenFilter]]" as="taal">
+                  <paper-item>[[taal.Naam]]</paper-item>
+                </template>
+              </paper-menu>
+            </paper-dropdown-menu>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <a href="#" id="gemeente"></a>
+        <template is="dom-repeat" items="[[gemeenten]]" as="item">
+          <tr on-tap="nav" target$="[[item.__firebaseKey__]]" tabindex="0">
+            <td class="GemeenteId" width="10">[[item.GemeenteId]]</td>
+            <td class="GemeenteNaam relative">[[item.GemeenteNaam]]</td>
+            <td class="NISGemeenteCode">[[item.NISGemeenteCode]]</td>
+            <td class="TaalCode">[[item.TaalCode]]</td>
+            <td class="TaalCodeGemeenteNaam">[[item.TaalCodeGemeenteNaam]]</td>
+            <td class="TaalCodeTweedeTaal">[[item.TaalCodeTweedeTaal]]</td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+  </template>
+  <script src="cache-gemeenten.js"></script>
+</dom-module>

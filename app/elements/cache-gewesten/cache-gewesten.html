@@ -1,0 +1,33 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="cache-gewesten">
+  <template>
+    <link rel="stylesheet" href="cache-gewesten.css">
+    <firebase-collection location="https://fiery-inferno-8058.firebaseio.com/gewesten" data="{{gewesten}}"></firebase-collection>
+    <table id="cache-gewesten" flex>
+      <thead>
+        <tr>
+          <th class="Id">Id</th>
+          <th class="Naam">Naam</th>
+          <th class="TaalCode">TaalCode</th>
+          <th class="Gemeenten">Gemeenten</th>
+        </tr>
+      </thead>
+      <tbody>
+        <a href="#" id="gewest"></a>
+        <template is="dom-repeat" items="[[gewesten]]" as="item">
+          <tr on-tap="nav" target$="[[item.__firebaseKey__]]" tabindex="0">
+            <td class="Id" width="10">[[item.GewestId]]</td>
+            <td class="Naam relative">[[item.GewestNaam]]</td>
+            <td class="TaalCode">[[item.TaalCodeGewestNaam]]</td>
+            <td class="Gemeenten" style="padding: 0px; margin: 0px; width: 20px; padding-top: 15px;">
+              <paper-button raised class="colorful" on-click="addGemeenten()">
+                <iron-icon icon="add"></iron-icon>
+              </paper-button>
+            </td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+  </template>
+  <script src="cache-gewesten.js"></script>
+</dom-module>

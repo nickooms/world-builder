@@ -1,0 +1,85 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<polymer-element name="add-straten" attributes="proxy-url add-object-type">
+  <dom-module id="add-straten">
+    <template>
+    	<style is="custom-style">
+		    section > paper-button {
+		      background-color: var(--google-grey-300); 
+		      padding: 5px;
+		    }
+		    section > paper-button:hover {
+		      background-color: var(--paper-light-blue-200);
+		      padding: 5px;
+		    }
+		    paper-dialog.colored {
+		      border: 2px solid;
+		      border-color: var(--paper-green-500);
+		      background-color: var(--paper-light-green-50);
+		      color: var(--paper-green-500);
+		    }
+		    paper-dialog.size-position {
+		      position: fixed;
+		      top: 16px;
+		      right: 16px;
+		    }
+		    paper-progress {
+		      display: block;
+		      width: 100%;
+		      margin: 20px 0;
+		    }
+		    paper-progress.blue {
+		      --paper-progress-active-color: var(--paper-light-blue-500);
+		      --paper-progress-secondary-color: var(--paper-light-blue-100);
+		    }
+		    paper-progress.red {
+		      --paper-progress-active-color: var(--paper-red-500);
+		      --paper-progress-secondary-color: var(--paper-red-100);
+		    }
+		    paper-progress.orange {
+		      --paper-progress-active-color: var(--paper-orange-500);
+		      --paper-progress-secondary-color: var(--paper-orange-100);
+		    }
+		    paper-progress.green {
+		      --paper-progress-active-color: var(--paper-light-green-500);
+		      --paper-progress-secondary-color: var(--paper-light-green-100);
+		    }
+		    paper-button {
+				  margin-bottom: 24px;
+				}
+				paper-button[raised].colorful {
+				  background: #4285f4;
+				  color: #fff;
+				}
+		  </style>
+    	<iron-request id="xhr"></iron-request>
+	    <paper-dialog id="animated" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+	      <h2><center>Loading Straten...</center></h2>
+	      <div class="vertical-section" style="width: 800px;height: 50^x;">
+	      	<paper-progress class="blue" indeterminate value="800" min="100" max="1000"></paper-progress><br>
+	      </div>
+	    </paper-dialog>
+      <firebase-collection id="firebase" location="https://fiery-inferno-8058.firebaseio.com/straten" data="{{straten}}"></firebase-collection>
+      <paper-button id="btn" raised class="colorful">
+        <iron-icon icon="add"></iron-icon>
+        Straten
+      </paper-button>
+    </template>
+    <script src="add-straten.js"></script>
+    <script>
+	    function clickHandler(e) {
+	      var button = e.target;
+	      while (!button.hasAttribute('data-dialog') && button !== document.body) {
+	        button = button.parentElement;
+	      }
+	      if (!button.hasAttribute('data-dialog')) {
+	        return;
+	      }
+	      var id = button.getAttribute('data-dialog');
+	      var dialog = document.getElementById(id);
+	      if (dialog) {
+	        dialog.open();
+	      }
+	    }
+	  </script>
+  </dom-module>
+</polymer-element>

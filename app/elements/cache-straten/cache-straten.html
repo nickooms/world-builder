@@ -1,0 +1,48 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="cache-straten">
+  <template>
+    <link rel="stylesheet" href="cache-straten.css">
+    <firebase-collection location="https://fiery-inferno-8058.firebaseio.com/straten" data="{{straten}}"></firebase-collection>
+    <firebase-collection location="https://fiery-inferno-8058.firebaseio.com/talenFilter" data="{{talenFilter}}"></firebase-collection>
+    <table id="cache-straten" flex>
+      <thead>
+        <tr>
+          <th class="StraatnaamId">StraatnaamId</th>
+          <th class="Straatnaam">Straatnaam</th>
+          <th class="StraatnaamLabel">StraatnaamLabel</th>
+          <th class="TaalCode" valign="top" style="padding:0px; margin: 0px; height: 56dp;">
+            <paper-dropdown-menu label="TaalCode" style="height: 30dp; margin-bottom: 20px;">
+              <paper-menu class="dropdown-content">
+                <template is="dom-repeat" items="[[talenFilter]]" as="taal">
+                  <paper-item>[[taal.Naam]]</paper-item>
+                </template>
+              </paper-menu>
+            </paper-dropdown-menu>
+          </th>
+          <th class="TaalCodeTweedeTaal">
+            <paper-dropdown-menu label="TaalCodeTweedeTaal" style="height: 30dp; margin-bottom: 20px;">
+              <paper-menu class="dropdown-content">
+                <template is="dom-repeat" items="[[talenFilter]]" as="taal">
+                  <paper-item>[[taal.Naam]]</paper-item>
+                </template>
+              </paper-menu>
+            </paper-dropdown-menu>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <a href="#" id="straat"></a>
+        <template is="dom-repeat" items="[[straten]]" as="item">
+          <tr on-tap="nav" target$="[[item.__firebaseKey__]]" tabindex="0">
+            <td class="StraatnaamId" width="10">[[item.StraatnaamId]]</td>
+            <td class="Straatnaam relative">[[item.Straatnaam]]</td>
+            <td class="Straatnaamlabel">[[item.Straatnaamlabel]]</td>
+            <td class="TaalCode">[[item.TaalCode]]</td>
+            <td class="TaalCodeTweedeTaal">[[item.TaalCodeTweedeTaal]]</td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+  </template>
+  <script src="cache-straten.js"></script>
+</dom-module>

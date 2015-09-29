@@ -1,0 +1,58 @@
+<script src="../bower_components/page/page.js"></script>
+<script>
+  window.addEventListener('WebComponentsReady', () => {
+    function scrollToTop(ctx, next) {
+      app.scrollPageToTop();
+      next();
+    }
+    page('/cache-taal/:firebaseId', scrollToTop, data => {
+      app.params = data.params;
+      app.route = 'cache-taal';
+      app.$.header.textContent = 'Taal';
+    });
+    page('/cache-gewest/:firebaseId', scrollToTop, data => {
+      app.params = data.params;
+      app.route = 'cache-gewest';
+      app.$.header.textContent = 'Gewest';
+    });
+    page('/cache-gemeente/:firebaseId', scrollToTop, data => {
+      app.params = data.params;
+      app.route = 'cache-gemeente';
+      app.$.header.textContent = 'Gemeente';
+    });
+    page('/cache-straat/:firebaseId', scrollToTop, data => {
+      app.params = data.params;
+      app.route = 'cache-straat';
+      app.$.header.textContent = 'Straat';
+    });
+    var router = path => {
+      app.route = `cache-${path}`;
+      app.$.header.textContent = path.substr(0, 1).toUpperCase() + path.substr(1)
+    }
+    page('/', scrollToTop, () => {
+      app.route = 'cache-talen';
+      app.$.header.textContent = 'Talen';
+    });
+    page('/cache-talen', scrollToTop, () => {
+      app.route = 'cache-talen';
+      app.$.header.textContent = 'Talen';
+    });
+    page('/cache-gewesten', scrollToTop, () => {
+      app.route = 'cache-gewesten';
+      app.$.header.textContent = 'Gewesten';
+    });
+    page('/cache-gemeenten', scrollToTop, () => {
+      app.route = 'cache-gemeenten';
+      app.$.header.textContent = 'Gemeenten';
+    });
+    page('/cache-straten', scrollToTop, () => {
+      app.route = 'cache-straten';
+      app.$.header.textContent = 'Straten';
+    });
+    page('/cache-huisnummers', scrollToTop, () => {
+      app.route = 'cache-huisnummers';
+      app.$.header.textContent = 'Huisnummers';
+    });
+    page({ hashbang: true });
+  });
+</script>

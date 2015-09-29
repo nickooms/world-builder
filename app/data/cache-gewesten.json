@@ -1,0 +1,11 @@
+[
+  { "GewestId": 1, "TaalCodeGewestNaam": "nl", "GewestNaam": "Brussels Hoofdstedelijk Gewest" },
+  { "GewestId": 1, "TaalCodeGewestNaam": "fr", "GewestNaam": "Région de Bruxelles-Capitale" },
+  { "GewestId": 1, "TaalCodeGewestNaam": "de", "GewestNaam": "Die Region Brüssel-Hauptstadt" },
+  { "GewestId": 2, "TaalCodeGewestNaam": "de", "GewestNaam": "Die Flämische Region" },
+  { "GewestId": 2, "TaalCodeGewestNaam": "nl", "GewestNaam": "Vlaams Gewest" },
+  { "GewestId": 2, "TaalCodeGewestNaam": "fr", "GewestNaam": "Région flamande" },
+  { "GewestId": 3, "TaalCodeGewestNaam": "nl", "GewestNaam": "Waals Gewest" },
+  { "GewestId": 3, "TaalCodeGewestNaam": "fr", "GewestNaam": "Région walonne" },
+  { "GewestId": 3, "TaalCodeGewestNaam": "de", "GewestNaam": "Die Wallonische Region" }
+]

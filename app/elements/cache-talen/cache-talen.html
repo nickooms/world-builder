@@ -1,0 +1,27 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="cache-talen">
+  <template>
+    <link rel="stylesheet" href="cache-talen.css">
+    <firebase-collection location="https://fiery-inferno-8058.firebaseio.com/talen" data="{{talen}}"></firebase-collection>
+    <table id="cache-talen" flex>
+      <thead>
+        <tr>
+          <th class="Code">Code</th>
+          <th class="Naam">Naam</th>
+          <th class="Definitie">Definitie</th>
+        </tr>
+      </thead>
+      <tbody>
+        <a href="#" id="taal"></a>
+        <template is="dom-repeat" items="[[talen]]" as="item">
+          <tr on-tap="nav" target$="[[item.__firebaseKey__]]" tabindex="0">
+            <td class="Code" width="10">[[item.Code]]</td>
+            <td class="Naam relative">[[item.Naam]]</td>
+            <td class="Definitie">[[item.Definitie]]</td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+  </template>
+  <script src="cache-talen.js"></script>
+</dom-module>

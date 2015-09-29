@@ -1,0 +1,7 @@
+[
+	{ "Code": "*", "Naam": "Alle talen", "Definitie": "Alle talen." },
+	{ "Code": "NULL", "Naam": "Geen taal", "Definitie": "Geen taal." },
+	{ "Code": "nl", "Naam": "Nederlands", "Definitie": "Nederlands." },
+	{ "Code": "fr", "Naam": "Frans", "Definitie": "Frans." },
+	{ "Code": "de", "Naam": "Duits", "Definitie": "Duits." }
+]
