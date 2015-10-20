@@ -1,8 +1,4 @@
 {
   "source": ".",
-  "destination": "./docs"/*,
-  "test": {
-    "type": "mocha",
-    "source": "./test"
-  }*/
+  "destination": "./docs"
 }
